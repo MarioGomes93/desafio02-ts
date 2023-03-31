@@ -28,7 +28,7 @@ desenvolvido por [Nathally Souza](https://github.com/nathyts)
   - Ao clicar no botão, deve aparecer um alert com uma mensagem de boas vindas
   - Crie o teste unitário da função
   
-  ##################################Desenvolvimento em 31/03/2023############################################################
+  ##################################Desenvolvimento em 31/03/2023#####################################
   
   #### Desafios
 [ ] Incluir validação da senha no campo de login
