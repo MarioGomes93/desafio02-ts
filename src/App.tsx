@@ -1,17 +1,23 @@
-import { Header} from './components/Header/Header'
-import { Card } from './components/Card'
-import { Box } from '@chakra-ui/react'
-
-
+import { ChakraProvider } from '@chakra-ui/react'
+import { Layout } from './components/Layout'
+import { BrowserRouter } from 'react-router-dom'
+import { AppContextProvider } from './components/AppContext'
+import MainRoutes from './services/routes'
+import { createLocalStorage, getAllLocalStorage } from './services/storage'
 
 function App() {
-  return (
-    <>
-      <Box minHeight='100vh' backgroundColor='#242424' padding='25px'>
-        <Header></Header>
-        <Card></Card>
-      </Box>
-    </>
+  !getAllLocalStorage() && createLocalStorage()
+  
+    return (
+    <BrowserRouter>
+      <AppContextProvider>
+        <ChakraProvider>
+          <Layout>
+            <MainRoutes/>       
+          </Layout>
+        </ChakraProvider>
+      </AppContextProvider>
+    </BrowserRouter>
   );
 }
 
